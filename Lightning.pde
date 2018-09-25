@@ -1,33 +1,40 @@
-int startX = 0;
-int startY = 150;
-int endX = 0;
-int endY = 150;
+PImage webImg;
+int startX = (int)(Math.random()* 201) + 50;
+int startY = 0;
+int endX = 150;
+int endY = 0;
 
 void setup()
 {
-  background(0);
+  frameRate(1000);
+  background(198);
   size(300,300);
-  strokeWeight(1);
+  String url = "http://www.aumentaty.com/community/wp-content/uploads/2018/05/Picture_20180523075422.png";
+  webImg = loadImage(url, "png");
+  strokeWeight(3);
   noLoop();
 }
 void draw()
 {
-	while (endX < 300) 
-	{
-		stroke((int)(Math.random()*131)+80,(int)(Math.random()*131)+80,(int)(Math.random()*131)+80);
-		endX = startX + (int)(Math.random()*10)+1;
-		endY = startY + (int)(Math.random()*18)-9;
-		line(startX,startY,endX,endY);
-		startX = endX;
-		startY = endY;
-	}
-}
-void mousePressed()
-{
-	redraw();
-	startX = 0;
-	startY = 150;
- 	endX = 0;
-	endY = 150;
-}
 
+  fill(0,0,0,50);
+  rect(0,0,300,300);
+  image(webImg, 0, 0);
+  while (endY < 300) 
+  {
+    stroke(255,255,0);
+    endY = startY + (int)(Math.random() *10) +1;
+    endX = startX + (int)(Math.random() *18) -9;
+    line(startX,startY,endX,endY);
+    startX = endX;
+    startY = endY;
+  }
+}
+void mouseDragged()
+{
+  redraw();
+  startX = (int)(Math.random()* 201) + 50;
+  startY = 0;
+  endX = 150;
+  endY = 0;
+}
