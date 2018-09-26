@@ -1,16 +1,16 @@
 PImage webImg;
-int startX = (int)(Math.random()* 201) + 50;
+int startX = (int)(Math.random()* 424);
 int startY = 0;
 int endX = 150;
 int endY = 0;
 
 void setup()
 {
-  frameRate(1000);
-  background(198);
-  size(300,300);
-  String url = "http://www.aumentaty.com/community/wp-content/uploads/2018/05/Picture_20180523075422.png";
+  frameRate(10);
+  size(423,416);
+  String url = "https://image.ibb.co/jZEsWp/Lightning_Pikachu.png";
   webImg = loadImage(url, "png");
+  tint(255,80);
   strokeWeight(3);
   noLoop();
 }
@@ -18,11 +18,11 @@ void draw()
 {
 
   fill(0,0,0,50);
-  rect(0,0,300,300);
+  rect(0,0,423,416);
   image(webImg, 0, 0);
-  while (endY < 300) 
+  while (endY < 416) 
   {
-    stroke(255,255,0);
+    stroke(255,200,0);
     endY = startY + (int)(Math.random() *10) +1;
     endX = startX + (int)(Math.random() *18) -9;
     line(startX,startY,endX,endY);
@@ -33,7 +33,7 @@ void draw()
 void mouseDragged()
 {
   redraw();
-  startX = (int)(Math.random()* 201) + 50;
+  startX = (int)(Math.random()* 424);
   startY = 0;
   endX = 150;
   endY = 0;
