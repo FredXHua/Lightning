@@ -6,10 +6,9 @@ int endY = 0;
 
 void setup()
 {
-  frameRate(10);
   size(423,416);
-  String url = "https://image.ibb.co/jZEsWp/Lightning_Pikachu.png";
-  webImg = loadImage(url, "png");
+  frameRate(10);
+  webImg = loadImage("https://image.ibb.co/jZEsWp/Lightning_Pikachu.png");
   tint(255,80);
   strokeWeight(3);
   noLoop();
