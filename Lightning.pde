@@ -8,8 +8,8 @@ void setup()
 {
   size(423,416);
   frameRate(10);
-  String url = "https://image.ibb.co/jZEsWp/Lightning_Pikachu.png";
-  webImg = loadImage(url, "png");
+  //String url = "https://image.ibb.co/jZEsWp/Lightning_Pikachu.png";
+  webImg = loadImage("pikachu.png");
   tint(255,80);
   strokeWeight(3);
   noLoop();
